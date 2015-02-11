@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QpV-Td-S1e">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yPY-8U-JBT">
+            <objects>
+                <tabBarController id="QpV-Td-S1e" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="zVj-Cw-6yh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MAZ-n0-ldg" kind="relationship" relationship="viewControllers" id="8ks-Mf-IpZ"/>
+                        <segue destination="hGj-mh-YsP" kind="relationship" relationship="viewControllers" id="bgo-v5-6QJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZQ-5P-gab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104" y="259"/>
+        </scene>
+        <!--Step 2-->
+        <scene sceneID="xc6-1n-PGZ">
+            <objects>
+                <navigationController id="hGj-mh-YsP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Step 2" id="Ug3-TZ-MKG"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2ZT-Su-7Dy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0vZ-Yp-Zzd" kind="relationship" relationship="rootViewController" id="kcn-P7-egz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aad-rs-1Li" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-522" y="393"/>
+        </scene>
+        <!--Current City WeatherVC-->
+        <scene sceneID="Ft4-An-Grh">
+            <objects>
+                <tableViewController id="cC4-tx-TpW" customClass="CurrentCityWeatherVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rQP-Mz-FCz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="cC4-tx-TpW" id="2WZ-oi-c4n"/>
+                            <outlet property="delegate" destination="cC4-tx-TpW" id="5RU-3y-nZn"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3k-ul-Fx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-618" y="1245"/>
+        </scene>
+        <!--Map View-->
+        <scene sceneID="BJx-CA-sd0">
+            <objects>
+                <viewController id="0vZ-Yp-Zzd" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IaZ-Xe-Iek"/>
+                        <viewControllerLayoutGuide type="bottom" id="Woj-8j-hLG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VN0-Td-F8W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3xZ-gG-fvw">
+                                <rect key="frame" x="0.0" y="128" width="320" height="390"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctL-D2-Rnw">
+                                <rect key="frame" x="21" y="77" width="279" height="38"/>
+                                <state key="normal" title="View weather details for my location" backgroundImage="Buttonbg.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeatherDetails" destination="0vZ-Yp-Zzd" eventType="touchUpInside" id="DM6-3R-VEd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map View" id="LCs-fQ-m1C"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapView" destination="3xZ-gG-fvw" id="o0y-oy-s3G"/>
+                        <outlet property="weatherDetailsButton" destination="ctL-D2-Rnw" id="v4k-v4-2lg"/>
+                        <segue destination="cC4-tx-TpW" kind="show" identifier="mycity" id="qrz-As-xKq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOH-yS-0G0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-158" y="1044"/>
+        </scene>
+        <!--Step1-->
+        <scene sceneID="PHb-Va-CFV">
+            <objects>
+                <navigationController id="MAZ-n0-ldg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Step1" id="DmT-Hp-8vm"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hw7-LU-MUy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Tpr-R4-Tln"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1AG-tU-hQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="259"/>
+        </scene>
+        <!--Step1-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="Step1" automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="AddCitiesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CDM-nm-Sxc">
+                                <rect key="frame" x="0.0" y="150" width="320" height="368"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="U8W-RV-c5C"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="fxv-Em-Q43"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l54-S8-OPF">
+                                <rect key="frame" x="16" y="112" width="227" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="3Em-Wh-3sh"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ums-Ny-Mq0">
+                                <rect key="frame" x="270" y="116" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addCityButtonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0DA-qA-Uom"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a city name in the text field and tap + to add it to list. Press done to view forecast for the cities." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qw-pW-Of7">
+                                <rect key="frame" x="16" y="72" width="276" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="TVe-JF-BnT"/>
+                    <navigationItem key="navigationItem" title="Welcome" id="oDR-EM-eoV">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="7ZS-jn-COT">
+                            <connections>
+                                <action selector="editToggle:" destination="vXZ-lx-hvc" id="RyB-fp-oR2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Xso-Rm-YTw">
+                            <connections>
+                                <action selector="doneButtonPress:" destination="vXZ-lx-hvc" id="51D-aR-2BD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cityTextField" destination="l54-S8-OPF" id="lrz-8y-lrk"/>
+                        <outlet property="tableView" destination="CDM-nm-Sxc" id="eWg-e9-Foc"/>
+                        <outlet property="view" destination="kh9-bI-dsS" id="QTf-zL-0od"/>
+                        <segue destination="GrX-CR-EH7" kind="show" identifier="forecasts" id="cuh-62-tSy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696" y="259"/>
+        </scene>
+        <!--Weather forecast-->
+        <scene sceneID="fHC-gV-BWP">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="GrX-CR-EH7" customClass="WeatherForecastListVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zsf-no-6Sw"/>
+                        <viewControllerLayoutGuide type="bottom" id="R71-Pe-7NP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QO8-fu-JJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-ai-IsP">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GrX-CR-EH7" id="1bS-AZ-P4X"/>
+                                    <outlet property="delegate" destination="GrX-CR-EH7" id="SvX-0z-ybI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weather forecast" id="gww-gS-LiR">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="u7r-14-dQh">
+                            <connections>
+                                <action selector="backButtonPress:" destination="GrX-CR-EH7" id="3uD-TG-mzG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="yGM-ai-IsP" id="w0k-kl-xOc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rad-8F-vH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="259"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Buttonbg.png" width="200" height="30"/>
+    </resources>
+</document>
